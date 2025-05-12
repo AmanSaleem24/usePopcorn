@@ -10,13 +10,13 @@ const defualtText =
 export default function TextExpander({
   text = defualtText,  
   collapsedNumWords = 50,
-  expandButtonText = "...Show more",
-  collapsedButtonText = "...Close",
+  expandButtonText = "Show more",
+  collapsedButtonText = "Show less",
   buttonColor = "#0000cd",
 }) {
   const [expandText, setExpandText] = useState(false);
   const [hovered, setHovered] = useState(false);
-  const showText = text.split(" ").splice(0, collapsedNumWords).join(" ");
+  const showText = text.split(" ").splice(0, collapsedNumWords).join(" ")+ '...';
 
   function handleClick() {
     setExpandText((prev) => !prev);
